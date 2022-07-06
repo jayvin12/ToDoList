@@ -14,6 +14,9 @@ inputBox.onkeyup = () => {
 //if user click on the  add button
 addBtn.onclick = () => {
     let userData = inputBox.value;//getting user entered value
+    if (inputBox.value.trim() === "") {//prevent from saving blank value
+        return;
+    }
     let getLocalStorage = localStorage.getItem("New ToDo List");//getting localStorage
     if (getLocalStorage == null) {//if localStorage is null
         listArr = [];//creating blank Array
